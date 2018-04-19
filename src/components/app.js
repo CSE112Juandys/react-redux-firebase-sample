@@ -33,6 +33,7 @@ export default class App extends Component {
   render() {
     return (
       <div> 
+        <p> this version is deployed </p>
         <p> {this.state.firebaseStore} </p>
         <button onClick={this.handleUpdateFirebase} > update firebase </button> 
       </div>
