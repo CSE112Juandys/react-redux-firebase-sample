@@ -9,4 +9,6 @@ cache:
 install:
 - cd ./functions && yarn install && cd ..
 - cd ./client && yarn install && cd ..
-script: echo "script"
+script:
+  - cd ./client && yarn build && cd ..
+  - cd ./client && yarn test && cd ..
