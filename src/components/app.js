@@ -6,8 +6,18 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      firebaseStore : "empty"
+      firebaseStore : [],
+      queryCounter  : 1
     };
+  
+    this.handleUpdateFirebase = this.handleUpdateFirebase.bind(this);
+  }
+
+  handleUpdateFirebase() {
+    const queryCounter = this.state.queryCounter + 1;
+    this.setState({ queryCounter });
+    this.props.onUpdateFirebaseStore(this.state.queryCounter);
+
   }
 
   componentDidMount() {
@@ -22,7 +32,10 @@ export default class App extends Component {
 
   render() {
     return (
-      <div> {this.state.firebaseStore} </div>
+      <div> 
+        <p> {this.state.firebaseStore} </p>
+        <button onClick={this.handleUpdateFirebase} > update firebase </button> 
+      </div>
     );
   }
 }

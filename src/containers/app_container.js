@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { readFirebaseStore } from '../actions/firebase_store_actions';
+import { readFirebaseStore } from '../actions/read_firebase_store_actions';
+import { updateFirebaseStore } from '../actions/update_firebase_store_actions';
 import App from '../components/app';
 
 function mapStateToProps(state) {
@@ -10,7 +11,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        onReadFirebaseStore : () => dispatch(readFirebaseStore())
+        onReadFirebaseStore   : () => dispatch(readFirebaseStore()),
+        onUpdateFirebaseStore : (dataToAdd) => dispatch(updateFirebaseStore(dataToAdd))
     };
 }
 
