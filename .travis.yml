@@ -10,6 +10,8 @@ install:
 script:
   - cd ./client && npm test && cd ..
   - cd ./client && npm run build && cd ..
+notifications:
+  slack: thejuandys:5scN0mDB9GwtbWxG4aevTrQr
 deploy:
   skip_cleanup: true
   provider: firebase
