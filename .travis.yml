@@ -10,3 +10,8 @@ install:
 script:
   - cd ./client && npm test && cd ..
   - cd ./client && npm run build && cd ..
+deploy:
+  skip_cleanup: true
+  provider: firebase
+  token:
+    secure: 1/a6fBTe3vJ9jJBKbFEix8TO-dTdonsMu0U0hgJvXlkt4
