@@ -30,6 +30,11 @@ export default function firebaseStoreReducer(state = initialState.firebaseStore,
             console.log(action.type);
             return state;
 
+        case ActionTypes.WATCH_FIREBASE_STORE_TRIGGERED:
+            console.log(action.type);
+            console.log(action.dataAdded);
+            return state;
+
         default:
             console.log("default");
             return state;
