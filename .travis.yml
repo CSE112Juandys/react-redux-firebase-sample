@@ -5,6 +5,8 @@ sudo: false
 cache:
   directories:
   - node_modules
+install:
+  - cd ./client && npm install && cd ..
 script:
   - cd ./client && npm test && cd ..
   - cd ./client && npm run build && cd ..
